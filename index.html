@@ -2,224 +2,585 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Personal Page</title>
-<style>
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #30485f;
-  background: #fffdf8;
-  line-height: 1.7;
-}
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 7%;
-  background: #fffdf8;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 12px #263f5510;
-}
-.logo { font-size: 23px; font-weight: bold; }
-nav a {
-  color: #30485f;
-  text-decoration: none;
-  margin-left: 22px;
-  font-size: 14px;
-}
-nav a:hover, .link:hover { color: #4386b7; }
-.hero {
-  min-height: 410px;
-  display: flex;
-  align-items: center;
-  padding: 60px 12%;
-  color: white;
-  background:
-    linear-gradient(90deg, #203a54b8, #203a5430),
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85")
-    center 55%/cover;
-}
-.hero h1 { font-size: clamp(38px, 6vw, 62px); margin: 0 0 8px; }
-.hero p { font-size: 18px; }
-.btn {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 10px 24px;
-  border: 1px solid currentColor;
-  border-radius: 28px;
-  color: inherit;
-  text-decoration: none;
-}
-section { padding: 55px 8%; scroll-margin-top: 75px; }
-section h2 { font-size: 30px; margin-top: 0; }
-.about {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 32px;
-  align-items: center;
-}
-.about img {
-  width: 100%;
-  height: 270px;
-  object-fit: cover;
-  border-radius: 14px;
-}
-.soft { background: #eef6fb; }
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-}
-.card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 18px #30485f10;
-}
-.card img { width: 100%; height: 170px; object-fit: cover; }
-.card-content { padding: 18px; }
-.card h3 { margin: 0 0 8px; }
-.card p { margin-top: 0; font-size: 14px; }
-.link { color: #397fb3; text-decoration: none; }
-.contact { text-align: center; }
-footer {
-  text-align: center;
-  padding: 26px;
-  color: white;
-  background: #30485f;
-}
-footer a { color: white; margin: 0 10px; }
-@media (max-width: 650px) {
-  nav { padding: 14px 5%; flex-wrap: wrap; gap: 10px; }
-  nav a { margin: 0 8px 0 0; font-size: 13px; }
-  .hero { padding: 60px 7%; min-height: 350px; }
-  section { padding: 40px 6%; }
-  .about, .cards { grid-template-columns: 1fr; }
-  .about img { height: 230px; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nobbal's personal portfolio, interests, reflections and creative journey.">
+  <title>Nobbal — Personal Portfolio</title>
+
+  <style>
+    :root {
+      --cream: #fbfaf6;
+      --blue: #dcebf5;
+      --navy: #243d56;
+      --accent: #648eae;
+      --text: #42566a;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 15px 7%;
+      background: rgba(251, 250, 246, 0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 15px rgba(36, 61, 86, 0.06);
+    }
+
+    .logo {
+      color: var(--navy);
+      font-size: 25px;
+      font-weight: 750;
+      letter-spacing: -1px;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 510px;
+      display: flex;
+      align-items: center;
+      padding: 75px 10%;
+      color: white;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(24, 44, 63, 0.76),
+          rgba(24, 44, 63, 0.12)
+        ),
+        url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=85")
+        center 55% / cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 12px 0;
+      font-size: clamp(52px, 9vw, 92px);
+      line-height: 1.1;
+      letter-spacing: -3px;
+    }
+
+    .hero .intro {
+      max-width: 550px;
+      font-size: clamp(17px, 2.5vw, 22px);
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 24px;
+      border: 1px solid white;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .button:hover {
+      background: white;
+      color: var(--navy);
+    }
+
+    /* Shared sections */
+    section {
+      padding: 80px 9%;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 5px 0 28px;
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.25;
+      letter-spacing: -1px;
+    }
+
+    .section-description {
+      max-width: 650px;
+      margin-bottom: 32px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .about-photo {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .about-text p {
+      margin-top: 0;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      padding: 5px 13px;
+      border: 1px solid #c9dce9;
+      border-radius: 25px;
+      color: var(--navy);
+      font-size: 12px;
+    }
+
+    /* Log */
+    .log-section {
+      background: var(--blue);
+    }
+
+    .log-card {
+      max-width: 850px;
+      padding: 34px;
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 10px;
+      box-shadow: 0 8px 28px rgba(36, 61, 86, 0.05);
+    }
+
+    .log-meta {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .log-card h3 {
+      margin: 8px 0 16px;
+      color: var(--navy);
+      font-size: 25px;
+    }
+
+    .reflection-points {
+      padding-left: 22px;
+    }
+
+    .reflection-points li {
+      margin: 8px 0;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--blue);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.45s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-caption {
+      padding: 18px 20px;
+      background: white;
+    }
+
+    .gallery-caption h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 19px;
+    }
+
+    .gallery-caption p {
+      margin: 5px 0 0;
+      font-size: 14px;
+    }
+
+    /* Contact */
+    .contact-section {
+      text-align: center;
+      background: #f0f5f8;
+    }
+
+    .contact-content {
+      max-width: 620px;
+      margin: auto;
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 26px;
+      border-radius: 28px;
+      background: var(--navy);
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-email:hover {
+      background: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      padding: 30px 7%;
+      color: #eaf1f6;
+      background: var(--navy);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+    }
+
+    footer p {
+      margin-bottom: 0;
+      color: #c7d7e4;
+    }
+
+    /* Mobile layout */
+    @media (max-width: 700px) {
+      .navbar {
+        padding: 13px 5%;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .hero {
+        min-height: 440px;
+        padding: 60px 7%;
+        background-position: center;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      section {
+        padding: 55px 7%;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .about-photo {
+        height: 300px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item img {
+        height: 240px;
+      }
+
+      .log-card {
+        padding: 23px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="logo">✿ My Page</div>
-  <div>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#interests">Interests</a>
-    <a href="#articles">Articles</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a class="logo" href="#home">Nobbal.</a>
 
-<header class="hero" id="home">
-  <div>
-    <h1>Hello, I'm Your Name</h1>
-    <p>A student exploring new ideas, places and cultures.</p>
-    <p>Collecting small moments and making a bigger future.</p>
-    <a class="btn" href="#about">Discover More →</a>
-  </div>
-</header>
-
-<section id="about">
-  <h2>About Me</h2>
-  <div class="about">
-    <img
-      src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=85"
-      alt="Portrait photograph">
-    <div>
-      <p>Hello! I'm a postgraduate student at the University of Leeds in the UK.</p>
-      <p>I'm interested in digital media, culture and communication. Studying in a new country gives me opportunities to learn, explore and see the world from different perspectives.</p>
-      <p>On this website, I share my interests, experiences and things I discover along the way.</p>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#log">Log</a>
+      <a href="#contact">Contact</a>
     </div>
-  </div>
-</section>
+  </nav>
 
-<section class="soft" id="interests">
-  <h2>My Interests</h2>
-  <div class="cards">
-    <article class="card">
-      <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85" alt="Food">
-      <div class="card-content">
-        <h3>Food & Cooking</h3>
-        <p>I love exploring different cuisines and cooking dishes from my hometown.</p>
-        <a class="link" href="#articles">Read more →</a>
-      </div>
-    </article>
-    <article class="card">
-      <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=85" alt="Travel">
-      <div class="card-content">
-        <h3>Travel & Culture</h3>
-        <p>Discovering new places, meeting people and experiencing different cultures.</p>
-        <a class="link" href="#articles">Read more →</a>
-      </div>
-    </article>
-    <article class="card">
-      <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=85" alt="Writing and study">
-      <div class="card-content">
-        <h3>Study & Ideas</h3>
-        <p>Learning about digital media and how communication shapes everyday life.</p>
-        <a class="link" href="#articles">Read more →</a>
-      </div>
-    </article>
-  </div>
-</section>
+  <!-- Home -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">Welcome to my world</div>
 
-<section id="articles">
-  <h2>Latest Articles</h2>
-  <div class="cards">
-    <article class="card">
-      <div class="card-content">
-        <p>MY LIFE IN THE UK</p>
-        <h3>Starting a New Chapter in Leeds</h3>
-        <p>My first experiences of studying and living in a new country.</p>
-        <a class="link" href="#contact">Ask me about it →</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="card-content">
-        <p>FOOD & MEMORIES</p>
-        <h3>A Taste of My Hometown</h3>
-        <p>Why traditional food can connect us to home and our memories.</p>
-        <a class="link" href="#contact">Ask me about it →</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="card-content">
-        <p>MEDIA & CULTURE</p>
-        <h3>How We See the World</h3>
-        <p>Some thoughts on media, culture and the stories we encounter.</p>
-        <a class="link" href="#contact">Ask me about it →</a>
-      </div>
-    </article>
-  </div>
-</section>
+      <h1>Hi, I'm Nobbal.</h1>
 
-<section class="soft contact" id="contact">
-  <h2>Let's Connect</h2>
-  <p>Thank you for visiting my personal page!</p>
-  <p>Feel free to get in touch.</p>
-  <a class="link" href="mailto:your-email@example.com">
-    Email me
-  </a>
-</section>
+      <p class="intro">
+        I love good food, Japanese anime, and the beauty of nature.
+      </p>
 
-<footer>
-  <p><strong>✿ My Personal Page</strong></p>
-  <p>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#articles">Articles</a>
-    <a href="#contact">Contact</a>
-  </p>
-  <small>© 2026 My Personal Page. Made with care.</small>
-</footer>
+      <a class="button" href="#about">Get to know me &rarr;</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <div class="section-label">A little about me</div>
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-grid">
+      <img
+        class="about-photo"
+        src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1000&q=85"
+        alt="Beautiful natural scenery">
+
+      <div class="about-text">
+        <p>
+          Hello! I'm Nobbal. Before beginning my postgraduate studies,
+          I spent four years studying English at university.
+          My undergraduate experience helped me develop my language
+          skills and an interest in communication and culture.
+        </p>
+
+        <p>
+          Outside my studies, I enjoy watching anime and films,
+          especially Japanese anime. I also love discovering delicious
+          food, exploring new places, and admiring beautiful natural
+          landscapes.
+        </p>
+
+        <p>
+          This website is my personal space to document my learning
+          journey, share reflections, collect inspiration, and record
+          the little things that make life interesting.
+        </p>
+
+        <div class="tag-list">
+          <span class="tag">Japanese Anime</span>
+          <span class="tag">Films</span>
+          <span class="tag">Food</span>
+          <span class="tag">Nature</span>
+          <span class="tag">Digital Media</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Log -->
+  <section class="log-section" id="log">
+    <div class="section-label">Learning journal</div>
+    <h2 class="section-title">My Log</h2>
+
+    <p class="section-description">
+      Small steps, new skills, and reflections from my learning journey.
+    </p>
+
+    <article class="log-card">
+      <div class="log-meta">Week 01 &nbsp; / &nbsp; Workshop Reflection</div>
+
+      <h3>My First Steps in Website Creation</h3>
+
+      <p>
+        During the first week's workshop, I learned how to create
+        a website and began exploring how digital content can be
+        organised and presented online.
+      </p>
+
+      <p>
+        One of the most interesting parts was learning how to build
+        a website with different sections, images, navigation links,
+        and written content. I also learned that creating a website
+        involves both creativity and attention to detail.
+      </p>
+
+      <p>
+        At first, the process seemed unfamiliar, especially when
+        working with HTML and CSS. However, experimenting with the
+        layout and seeing the page take shape made the experience
+        rewarding.
+      </p>
+
+      <p>
+        Overall, this workshop gave me a useful starting point for
+        developing my digital skills. I hope to keep experimenting
+        with design, improve my understanding of web creation, and
+        make my website more personal over time.
+      </p>
+
+      <p><strong>Key takeaway:</strong> Learning by doing helps me turn
+        new ideas into something real.</p>
+    </article>
+  </section>
+
+  <!-- Image Gallery -->
+  <section id="gallery">
+    <div class="section-label">Things I love</div>
+    <h2 class="section-title">My Gallery</h2>
+
+    <p class="section-description">
+      A collection of inspirations from food, travel, nature,
+      and my creative journey.
+    </p>
+
+    <div class="gallery-grid">
+
+      <article class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
+          alt="A delicious meal">
+        <div class="gallery-caption">
+          <h3>Food & Flavours</h3>
+          <p>Discovering delicious dishes and the stories behind food.</p>
+        </div>
+      </article>
+
+      <article class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=1000&q=85"
+          alt="Sunset over a beautiful landscape">
+        <div class="gallery-caption">
+          <h3>Nature & Scenery</h3>
+          <p>Finding beauty in mountains, sunsets, and quiet moments.</p>
+        </div>
+      </article>
+
+      <article class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85"
+          alt="A starry night sky">
+        <div class="gallery-caption">
+          <h3>Anime & Imagination</h3>
+          <p>Inspired by the imaginative worlds and stories I love.</p>
+        </div>
+      </article>
+
+      <article class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85"
+          alt="A notebook and creative workspace">
+        <div class="gallery-caption">
+          <h3>Ideas & Creativity</h3>
+          <p>Collecting ideas and documenting what I learn along the way.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section" id="contact">
+    <div class="contact-content">
+      <div class="section-label">Say hello</div>
+      <h2 class="section-title">Let's Connect</h2>
+
+      <p>
+        Thank you for visiting my little corner of the internet.
+        I'm always happy to share ideas, interests, and experiences.
+      </p>
+
+      <!-- Replace the example email with your own -->
+      <a class="contact-email"
+         href="mailto:your-email@example.com">
+        Get in Touch &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#log">Log</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <p>© 2026 Nobbal. Made with curiosity and creativity.</p>
+  </footer>
 
 </body>
 </html>
+
