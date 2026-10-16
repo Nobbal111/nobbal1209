@@ -234,6 +234,49 @@
       margin: 8px 0;
     }
 
+/* Weekly Journal */
+.journal-intro {
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+
+.journal-list {
+  display: grid;
+  gap: 28px;
+}
+
+.log-card {
+  width: 100%;
+}
+
+.log-card p {
+  margin: 12px 0;
+}
+
+.log-card h4 {
+  margin: 22px 0 8px;
+  color: var(--navy);
+  font-size: 17px;
+}
+
+.log-divider {
+  height: 1px;
+  margin: 22px 0;
+  background: #dce5eb;
+  border: 0;
+}
+
+.log-card .key-takeaway {
+  margin-top: 20px;
+  padding: 14px 18px;
+  border-left: 3px solid var(--accent);
+  background: #f3f7fa;
+  border-radius: 0 6px 6px 0;
+}
+
+.log-card .key-takeaway strong {
+  color: var(--navy);
+}
     /* Gallery */
     .gallery-grid {
       display: grid;
@@ -384,11 +427,12 @@
     <a class="logo" href="#home">Nobbal.</a>
 
     <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#log">Log</a>
-      <a href="#contact">Contact</a>
-    </div>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#journal">Journal</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</div>
   </nav>
 
   <!-- Home -->
@@ -449,17 +493,22 @@
     </div>
   </section>
 
-  <!-- Learning Log -->
-  <section class="log-section" id="log">
-    <div class="section-label">Learning journal</div>
-    <h2 class="section-title">My Log</h2>
+ <!-- Weekly Learning Journal -->
+<section class="log-section" id="journal">
+  <div class="section-label">My learning journey</div>
+  <h2 class="section-title">Weekly Learning Journal</h2>
 
-    <p class="section-description">
-      Small steps, new skills, and reflections from my learning journey.
-    </p>
+  <p class="section-description journal-intro">
+    A growing collection of weekly reflections, new skills,
+    challenges, and ideas from my academic and creative journey.
+    Each entry records what I have learned and how I hope to improve.
+  </p>
 
+  <div class="journal-list">
+
+    <!-- Week 1 -->
     <article class="log-card">
-      <div class="log-meta">Week 01 &nbsp; / &nbsp; Workshop Reflection</div>
+      <div class="log-meta">Week 01 / Workshop Reflection</div>
 
       <h3>My First Steps in Website Creation</h3>
 
@@ -490,10 +539,65 @@
         make my website more personal over time.
       </p>
 
-      <p><strong>Key takeaway:</strong> Learning by doing helps me turn
-        new ideas into something real.</p>
+      <div class="key-takeaway">
+        <strong>Key takeaway:</strong>
+        Learning by doing helps me turn new ideas into something real.
+      </div>
     </article>
-  </section>
+
+    <!-- Week 2 -->
+    <article class="log-card">
+      <div class="log-meta">Week 02 / Website Development & Web Research</div>
+
+      <h3>Building My Website and Exploring Web Data</h3>
+
+      <p>
+        This week, I continued developing my personal website.
+        I learned how to upload images to GitHub, organise image
+        files, and modify the HTML and CSS code to improve the
+        appearance of my website. Through this process, I became
+        more familiar with how a website is structured and how
+        small changes in the code can affect its design.
+      </p>
+
+      <p>
+        Another important part of this week was learning how to
+        scrape data from the web and collect it for use in research
+        projects. This introduced me to a new way of gathering
+        information online. I began to understand how web data can
+        be collected and potentially used to explore research
+        questions, identify patterns, and support further analysis.
+      </p>
+
+      <p>
+        Reflecting on this week, I realised that creating a website
+        and collecting online data both require patience, attention
+        to detail, and practical problem-solving skills. These
+        activities also helped me think more about how digital tools
+        can support communication and academic research.
+      </p>
+
+      <h4>Next Steps</h4>
+
+      <p>
+        Next week, I would like to continue improving my website
+        by adding more personal content and organising my weekly
+        logs. I also hope to develop my understanding of web scraping
+        and explore how collected data can be used responsibly
+        and effectively in research.
+      </p>
+
+      <div class="key-takeaway">
+        <strong>Key takeaway:</strong>
+        Digital skills can support both creative expression and
+        academic research.
+      </div>
+    </article>
+
+    <!-- Future weekly entries: add Week 3 here -->
+
+  </div>
+</section>
 
   <!-- Image Gallery -->
   <section id="gallery">
@@ -572,11 +676,12 @@
   <!-- Footer -->
   <footer>
     <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#log">Log</a>
-      <a href="#contact">Contact</a>
-    </div>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#journal">Journal</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</div>
 
     <p>© 2026 Nobbal. Made with curiosity and creativity.</p>
   </footer>
